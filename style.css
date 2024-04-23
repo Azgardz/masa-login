@@ -1,0 +1,152 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: linear-gradient(133deg, rgba(193, 193, 193,0.05) 0%, rgba(193, 193, 193,0.05) 2%,rgba(129, 129, 129,0.05) 2%, rgba(129, 129, 129,0.05) 27%,rgba(185, 185, 185,0.05) 27%, rgba(185, 185, 185,0.05) 66%,rgba(83, 83, 83,0.05) 66%, rgba(83, 83, 83,0.05) 100%),linear-gradient(442deg, rgba(240, 240, 240,0.05) 0%, rgba(240, 240, 240,0.05) 13%,rgba(231, 231, 231,0.05) 13%, rgba(231, 231, 231,0.05) 34%,rgba(139, 139, 139,0.05) 34%, rgba(139, 139, 139,0.05) 71%,rgba(112, 112, 112,0.05) 71%, rgba(112, 112, 112,0.05) 100%),linear-gradient(357deg, rgba(189, 189, 189,0.05) 0%, rgba(189, 189, 189,0.05) 47%,rgba(138, 138, 138,0.05) 47%, rgba(138, 138, 138,0.05) 58%,rgba(108, 108, 108,0.05) 58%, rgba(108, 108, 108,0.05) 85%,rgba(143, 143, 143,0.05) 85%, rgba(143, 143, 143,0.05) 100%),linear-gradient(217deg, rgba(53, 53, 53,0.05) 0%, rgba(53, 53, 53,0.05) 53%,rgba(44, 44, 44,0.05) 53%, rgba(44, 44, 44,0.05) 82%,rgba(77, 77, 77,0.05) 82%, rgba(77, 77, 77,0.05) 98%,rgba(8, 8, 8,0.05) 98%, rgba(8, 8, 8,0.05) 100%),linear-gradient(455deg, hsl(247,0%,2%),hsl(247,0%,2%));
+    color: #010101;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.login-popup .overlay {
+    position: fixed;
+    background-color: rgba(0,0,0,0.7);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+
+.login-popup .popup-content {
+    position: absolute;
+    background-color: #fff;
+    width: 30rem;
+    height: 28rem;
+    margin-bottom: 3rem;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 0.7rem;
+    transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
+    z-index: 3;
+    transform: scale(0);
+}
+
+.login-popup .popup-content .close-button {
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.8rem;
+    top: 1rem;
+    right: 1rem;
+    color: #fff;
+    background: #010101;
+    font-weight: 600;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.login-popup .popup-content h3 {
+    font-size: 2rem;
+}
+
+.login-popup.active .overlay {
+    display: block;
+    transition: all 300ms ease-in-out;
+}
+
+.login-popup.active .popup-content {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+}
+
+.open-popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.6rem 2rem;
+    box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5);
+    color: darkblue;
+    font-weight: 600;
+    z-index: 0;
+}
+
+.popup-content p {
+    font-size: 1rem;
+    line-height: 0.2;
+}
+
+.login-popup .form {
+    text-align: start;
+    line-height: 2rem;
+}
+
+.login-popup .form .username {
+    margin-top: 2rem;
+    padding: 5px;
+}
+
+.login-popup .form .password {
+    padding: 5px;
+}
+
+.login-popup .form input[type="text"], .login-popup .form input[type="password"] {
+    display: block;
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    outline: none;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.login-popup .form input[type="submit"] {
+    width: 100%;
+    outline: none;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    color: #fff;
+    background: #010101;
+}
+
+/* media query */
+/* Media query untuk tablet */
+@media screen and (max-width: 768px) {
+    .login-popup .popup-content {
+        width: 90%;
+        height: auto;
+        max-height: 80vh;
+        margin: 7%;
+    }
+}
+
+/* Media query untuk smartphone */
+@media screen and (max-width: 468px) {
+    .login-popup .popup-content {
+        width: 80%;
+        height: auto;
+        max-height: 80vh; 
+        padding: 1rem;
+        margin: 7%;
+    }
+    .login-popup .form input[type="text"],
+    .login-popup .form input[type="password"] {
+        width: 90%;
+    }
+}

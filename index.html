@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login-popup">
+      <div class="overlay"></div>
+      <div class="popup-content">
+        <div class="close-button">&times;</div>
+        <h3>LOGIN</h3>
+        <div class="form">
+          <form action="#" method="post">
+            <div class="username">
+              <label for="username">username</label>
+              <input type="text" placeholder="contoh: bima" />
+            </div>
+            <div class="password">
+              <label for="password">password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="contoh: 17/05/2006"
+              />
+            </div>
+            <div class="checkbox">
+              <label for="checkbox">Remember me</label>
+              <input type="checkbox" name="checkbox" id="checkbox" />
+            </div>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <button class="open-popup">LOGIN</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
